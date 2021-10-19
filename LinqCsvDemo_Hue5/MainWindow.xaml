@@ -1,0 +1,74 @@
+﻿<Window x:Class="LinqCsvDemo_Hue5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LinqCsvDemo_Hue5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top" Name="panCheckboxes" Margin="5">
+                <CheckBox Content="aa" IsChecked="True" />
+                <CheckBox Content="bb" />
+                <CheckBox Content="cc" IsChecked="True" />
+                <CheckBox Content="dd" />
+                <CheckBox Content="ee" IsChecked="True" />
+                <Label Content="Checked:" Margin="20,0,0,0"/>
+                <Label Name="lblCheckedCheckboxes" BorderBrush="Black" BorderThickness="1" Width="100"/>
+            </ToolBar>
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Margin="5">
+                    <ComboBox Name="cboCountries" DockPanel.Dock="Top" SelectionChanged="CboCountries_SelectionChanged"/>
+                    <ListBox Name="lstPersonsInCountry" />
+                </DockPanel>
+
+                <DockPanel Grid.Column="1" Margin="5">
+                    <Label Content="Suchtext" DockPanel.Dock="Top" />
+                    <TextBox Name="txtSearch" DockPanel.Dock="Top" KeyUp="TxtSearch_KeyUp"/>
+                    <ListBox Name="lstPersonsFound" />
+                </DockPanel>
+
+                <StackPanel Grid.Column="2" Name="panRadios" Margin="5">
+                    <RadioButton Content="A" />
+                    <RadioButton Content="B" />
+                    <RadioButton Content="C" IsChecked="True" />
+                    <RadioButton Content="D" />
+                    <RadioButton Content="E" />
+                    <Label Content="Checked:" Margin="0,20,0,0"/>
+                    <Label Name="lblCheckedRadio" BorderBrush="Black" BorderThickness="1"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="5" Name="panTextboxes">
+                    <Label Content="Minimale Länge:"/>
+                    <Slider Name="sldMinLength" Minimum="1" Maximum="20" Value="5" ValueChanged="SldMinLength_ValueChanged"/>
+                    <TextBox Text="Abc"/>
+                    <TextBox Text="Hallo"/>
+                    <TextBox Text="1234567890"/>
+                    <TextBox Text="123456789012345"/>
+                    <TextBox Text="12345678901234567890"/>
+                    <TextBox Text="Hollodaro"/>
+                </StackPanel>
+                <DockPanel Grid.Column="4">
+                    <WrapPanel Name="panButtons" DockPanel.Dock="Top" MinHeight="25">
+                        <WrapPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Margin" Value="3,1,0,1"/>
+                            </Style>
+                        </WrapPanel.Resources>
+                    </WrapPanel>
+                    <StackPanel x:Name="panPersons" Orientation="Vertical"/>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
