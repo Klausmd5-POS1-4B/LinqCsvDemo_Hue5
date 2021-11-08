@@ -13,6 +13,9 @@ namespace PersonDBLib
         public int AddressId { get; set; }
         public Adress Adress { get; set; }
 
+        public string PersonsFoundProp => $"{Lastname} {Firstname} [{BirthDate:dd.MM.yyyy}]";
+
+        public string PersonsCountryProp => $"{Lastname} {Firstname}: {Adress.Country}/{Adress.City}";
 
         public override string ToString() => $"{Firstname} {Lastname} [{BirthDate:dd.MM.yyyy}]";
     }

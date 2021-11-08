@@ -10,13 +10,13 @@
     <Grid>
         <DockPanel>
             <ToolBar DockPanel.Dock="Top" Name="panCheckboxes" Margin="5">
-                <CheckBox Content="aa" IsChecked="True" />
-                <CheckBox Content="bb" />
-                <CheckBox Content="cc" IsChecked="True" />
-                <CheckBox Content="dd" />
-                <CheckBox Content="ee" IsChecked="True" />
+                <CheckBox Content="aa" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" IsChecked="True" />
+                <CheckBox Content="bb" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <CheckBox Content="cc" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" IsChecked="True" />
+                <CheckBox Content="dd" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+                <CheckBox Content="ee" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" IsChecked="True" />
                 <Label Content="Checked:" Margin="20,0,0,0"/>
-                <Label Name="lblCheckedCheckboxes" BorderBrush="Black" BorderThickness="1" Width="100"/>
+                <Label Name="lblCheckedCheckboxes" Content="" BorderBrush="Black" BorderThickness="1" Width="100"/>
             </ToolBar>
             <Grid ShowGridLines="True">
                 <Grid.ColumnDefinitions>
@@ -29,21 +29,21 @@
 
                 <DockPanel Margin="5">
                     <ComboBox Name="cboCountries" DockPanel.Dock="Top" SelectionChanged="CboCountries_SelectionChanged"/>
-                    <ListBox Name="lstPersonsInCountry" />
+                    <ListBox Name="lstPersonsInCountry" DisplayMemberPath="PersonsCountryProp" />
                 </DockPanel>
 
                 <DockPanel Grid.Column="1" Margin="5">
                     <Label Content="Suchtext" DockPanel.Dock="Top" />
                     <TextBox Name="txtSearch" DockPanel.Dock="Top" KeyUp="TxtSearch_KeyUp"/>
-                    <ListBox Name="lstPersonsFound" />
+                    <ListBox Name="lstPersonsFound" DisplayMemberPath="PersonsFoundProp"/>
                 </DockPanel>
 
                 <StackPanel Grid.Column="2" Name="panRadios" Margin="5">
-                    <RadioButton Content="A" />
-                    <RadioButton Content="B" />
-                    <RadioButton Content="C" IsChecked="True" />
-                    <RadioButton Content="D" />
-                    <RadioButton Content="E" />
+                    <RadioButton Content="A" Checked="RadioButton_Checked" />
+                    <RadioButton Content="B" Checked="RadioButton_Checked" />
+                    <RadioButton Content="C" Checked="RadioButton_Checked" IsChecked="True" />
+                    <RadioButton Content="D" Checked="RadioButton_Checked" />
+                    <RadioButton Content="E" Checked="RadioButton_Checked" />
                     <Label Content="Checked:" Margin="0,20,0,0"/>
                     <Label Name="lblCheckedRadio" BorderBrush="Black" BorderThickness="1"/>
                 </StackPanel>
